@@ -22,18 +22,15 @@ namespace Threading
                 threads[i].Start();
                 Thread.Sleep(16);
             }
-
             foreach(Thread thread in threads)
             {
                 thread.Join();
             }
-
             foreach (FindPiThread i in findPiThreads) {
                 sum += i.numDartsHit;
             }
-
-            double estimation_of_pi = (4 * sum) / amountDarts;
-            Console.WriteLine(estimation_of_pi.ToString());
+            double estimation_of_pi = 4 * (sum / amountDarts);
+            Console.WriteLine(estimation_of_pi);
         }
     }
 }

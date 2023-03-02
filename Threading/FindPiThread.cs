@@ -15,7 +15,7 @@ namespace Threading
 
 
         public int numDartsHit {
-            get { return numDarts; }
+            get { return numDartsInTarget; }
         }
         public FindPiThread(int numDarts)
         {
@@ -29,9 +29,9 @@ namespace Threading
         {
             for(int i = 0; i < numDarts; i++)
             {
-                int x = random.Next(-1, 1);
-                int y = random.Next(-1, 1);
-                if (x > 0 && y > 0)
+                double x = random.NextDouble();
+                double y = random.NextDouble();
+                if (Math.Pow(x, 2) + Math.Pow(y, 2) <= 1)
                 {
                     numDartsInTarget++;
                 }
