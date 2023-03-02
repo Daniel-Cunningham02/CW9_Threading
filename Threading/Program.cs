@@ -29,8 +29,9 @@ namespace Threading
             foreach (FindPiThread i in findPiThreads) {
                 sum += i.numDartsHit;
             }
-            double estimation_of_pi = 4 * (sum / amountDarts);
+            double estimation_of_pi = ((4 * Convert.ToDouble(sum)) / (amountThreads * amountDarts));
             Console.WriteLine(estimation_of_pi);
+            Console.ReadKey();
         }
     }
 }

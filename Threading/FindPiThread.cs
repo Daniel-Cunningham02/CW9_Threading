@@ -31,7 +31,7 @@ namespace Threading
             {
                 double x = random.NextDouble();
                 double y = random.NextDouble();
-                if (Math.Pow(x, 2) + Math.Pow(y, 2) <= 1)
+                if (Math.Sqrt(Math.Pow(x, 2) + Math.Pow(y, 2)) <= 1)
                 {
                     numDartsInTarget++;
                 }
