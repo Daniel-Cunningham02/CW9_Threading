@@ -21,10 +21,10 @@
 	* Pi: 3.138
 	* Time: 307ms
 
-10000 Throws
+* 10000 Throws
 	* Pi: 3.12884
 	* Time: 306ms
 
-100000 Throws
+* 100000 Throws
 	* Pi: 3.141548
 	* Time: 525ms
