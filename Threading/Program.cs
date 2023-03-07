@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Threading;
+using System.Diagnostics;
 
 
 namespace Threading
@@ -15,6 +16,8 @@ namespace Threading
             int amountThreads = Int32.Parse(Console.ReadLine());
             List<Thread> threads = new List<Thread>();
             List<FindPiThread> findPiThreads = new List<FindPiThread>();
+            Stopwatch s = new Stopwatch();
+            s.Start();
             for(int i = 0; i < amountThreads; i++)
             {
                 findPiThreads.Add(new FindPiThread(amountDarts));
@@ -30,7 +33,9 @@ namespace Threading
                 sum += i.numDartsHit;
             }
             double estimation_of_pi = ((4 * Convert.ToDouble(sum)) / (amountThreads * amountDarts));
+            s.Stop();
             Console.WriteLine(estimation_of_pi);
+            Console.WriteLine("Time: " + s.ElapsedMilliseconds + "ms");
             Console.ReadKey();
         }
     }
